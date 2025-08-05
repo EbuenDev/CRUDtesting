@@ -7,24 +7,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Employee")
 @Getter
 @Setter
-public class Employee {
+public class Employee { // This represents a blueprint on the database table of Employee.
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;    // Column of id
 
-    private String firstName;
+    private String firstName;   // Column of firstname
 
-    private String lastName;
+    private String lastName;    // Column of lastname
 
-    private int age;
+    private int age;    // Column of age
 
-    private String role;
+    private String role;    // Column of role
+
+//    private LocalDateTime createdAt;
 
 }
