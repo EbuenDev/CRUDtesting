@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 public class Employee { // This represents a blueprint on the database table of Employee.
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;    // Column of id
 
     private String firstName;   // Column of firstname
