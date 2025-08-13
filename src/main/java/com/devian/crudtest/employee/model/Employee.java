@@ -2,13 +2,7 @@ package com.devian.crudtest.employee.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import lombok.*;
 
 @Entity
 @NoArgsConstructor
@@ -16,20 +10,33 @@ import java.time.LocalDateTime;
 @Table(name = "Employee")
 @Getter
 @Setter
+@Builder
 public class Employee { // This represents a blueprint on the database table of Employee.
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;    // Column of id
 
-    private String firstName;   // Column of firstname
+    // Column for User Details
+    private String firstName;
 
-    private String lastName;    // Column of lastname
+    private String lastName;
 
-    private int age;    // Column of age
+    private int age;
 
-    private String role;    // Column of role
 
-//    private LocalDateTime createdAt;
+
+    // User Login Details
+
+    @Column(nullable = false, unique = true, length = 100)
+    private String username;
+
+
+    @Column(nullable = false, length = 100)
+    private String password;
+
+
+    @Column(nullable = false, length = 50)
+    private String role;
 
 }
